@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-practic",
+  "version": "1.0.0",
+  "description": "belitsoft-module-2/ 2021",
+  "main": "serve.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gavr1k/nodejs-practice.git"
+  },
+  "author": "Gavrik Andrey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gavr1k/nodejs-practice/issues"
+  },
+  "homepage": "https://github.com/Gavr1k/nodejs-practice#readme"
+}
