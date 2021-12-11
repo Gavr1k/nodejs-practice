@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Gavr1k/nodejs-practice/issues"
   },
-  "homepage": "https://github.com/Gavr1k/nodejs-practice#readme"
+  "homepage": "https://github.com/Gavr1k/nodejs-practice#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
