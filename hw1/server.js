@@ -20,22 +20,50 @@ function getDataFromFIle(fileName) {
   }
 }
 
+function getResponse(req,method) {
+  if(req.method === method) {
+    return method;
+  }
+  else {
+    return `need ${method} request`;
+  }
+}
+
 http.createServer((req,res) => {
-  console.log('req url:::::',req.url)
   switch(req.url)
   {
     case '/about':
       res.writeHead(200, {'Content-type': 'text/html'});
-      res.end(getDataFromFIle('about.html'))
+      res.end(getDataFromFIle('about.html'));
+      break;
     case '/index':
       res.writeHead(200, {'Content-type': 'text/html'});
-      res.end(getDataFromFIle('index.html'))
+      res.end(getDataFromFIle('index.html'));
+      break;
     case '/services':
       res.writeHead(200, {'Content-type': 'text/html'});
       res.end(getDataFromFIle('services.html'))
+      break;
     case '/json':
       res.writeHead(200, {'Content-type': 'application/json'})
       res.end(getDataFromFIle('package.json'))
+      break;
+    case '/post':
+      res.writeHead(200, {'Content-type': 'text/plain'})
+      res.end(getResponse(req,'POST'));
+      break;
+    case '/delete':
+      res.writeHead(200, {'Content-type': 'text/plain'})
+      res.end(getResponse(req,'DELETE'));
+      break;
+    case '/put':
+      res.writeHead(200, {'Content-type': 'text/plain'})
+      res.end(getResponse(req,'PUT'));
+      break;
+    case '/patch':
+      res.writeHead(200, {'Content-type': 'text/plain'})
+      res.end(getResponse(req,'PATCH'));
+      break;
     default:
       res.writeHead(404, {'Content-type': 'text/plain'})
       res.end('404 not find')
