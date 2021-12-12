@@ -2,9 +2,9 @@ const http = require('http');
 
 const fs = require('fs');
 
-const baseDir = '/Users/andreihauryk/Desktop/nodejs-practice/nodejs-practic/';
+const baseDir = '/Users/andreihauryk/Desktop/nodejs-practice/nodejs-practic/hw1/';
 
-function getDataFromFIle(fileName){
+function getDataFromFIle(fileName) {
   const path = baseDir + fileName;
   if(fs.existsSync(path)){
     const data = fs.readFileSync(path, (err) => {
@@ -21,6 +21,7 @@ function getDataFromFIle(fileName){
 }
 
 http.createServer((req,res) => {
+  console.log('req url:::::',req.url)
   switch(req.url)
   {
     case '/about':
