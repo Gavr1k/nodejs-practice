@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "backend blog application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gavr1k/nodejs-practice.git"
+  },
+  "author": "Gavrik Andrey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gavr1k/nodejs-practice/issues"
+  },
+  "homepage": "https://github.com/Gavr1k/nodejs-practice#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
