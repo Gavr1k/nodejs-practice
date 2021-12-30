@@ -5,12 +5,22 @@ const Schema = mongoose.Schema
 const schema = new Schema({
   name: { type: String, required: true },
   body: { type: String, required: true },
-  // except: { type: String },
-  // categories: { type: String, required: true },
-  // tags: { type: String, required: true },
-  // author: { type: String, required: true },
-  // createdAt: { type: Date },
-  // updatedAt: { type: Date },
-})
+  except: { type: String },
+  categories: { 
+    type: [mongoose.Types.ObjectId],
+    ref: "Category",
+    required: true 
+  },
+  tags: { 
+    type: [mongoose.Types.ObjectId],
+    ref: "Tag",
+    required: true 
+  },
+  tags: { 
+    type: mongoose.Types.ObjectId,
+    ref: "Author",
+    required: true 
+  },
+}, { timestamps: true });
 
 module.exports = mongoose.model('Post', schema)
