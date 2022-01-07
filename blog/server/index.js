@@ -35,8 +35,12 @@ app.use(authorRoutes)
 app.use(categoryRoutes)
 
 app.get('/', (req,res) => {
-  const post = postModel.find()
-  res.render('Home',post)
+  const posts= postModel.find().then((posts) => {
+    res.render('Home',{posts:posts})
+  })
+  .catch((error) => {
+    res.status(400).json({error: error})
+  })
 })
 
 mogoose.connect(url, (error) => {
@@ -45,7 +49,7 @@ mogoose.connect(url, (error) => {
     return;
   }
   console.log('It is Connected')
-  app.listen(3001, () => {
+  app.listen(3000, () => {
     console.log('it is working')
   });
 })

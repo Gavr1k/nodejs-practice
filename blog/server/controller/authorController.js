@@ -1,7 +1,7 @@
 const { json } = require('body-parser')
 const authorModel = require('../models/author')
 
-module.exports = class TagController {
+module.exports = class authorController {
 
   static create(req,res) {
     const author = new authorModel(req.body)

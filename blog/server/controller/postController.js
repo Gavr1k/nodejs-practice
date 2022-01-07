@@ -20,7 +20,7 @@ module.exports = class PostController {
     .populate('categories')
     .populate('tags')
       .then((posts) => {
-        res.json(posts)
+        res.render('Home', {posts:posts})
       })
       .catch((error) => {
         res.status(400).json({error: error.message})
