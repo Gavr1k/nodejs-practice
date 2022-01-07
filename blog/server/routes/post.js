@@ -1,32 +1,20 @@
 const express = require('express')
-const PostModel = require('../models/post');
-
+const postController = require('../controller/postController')
 const router = express.Router()
 
+//get all tag
+router.get('/posts', postController.find)
 
-//get all posts
-router.get('/posts', (req,res) => {
-  PostModel.find((error, posts) => {
-    if(error) {
-      return res.status(400).json({ error: error.message })
-    }
-    res.json(posts)
-  })
-})
+//create tag
+router.post('/posts',postController.create)
 
-//create posts
+//get single tag
+router.get('/posts/:id', postController.findOne)
 
-router.post('/posts', (req,res) => {
-  const post = new PostModel(req.body)
-  post
-    .save()
-    .then((data) => {
-      console.log(data)
-      res.json(post)
-    })
-    .catch((error) => {
-      res.status(400).json({ error: error.message })
-    })
-})
+// //update tag
+router.patch('/posts/:id', postController.update)
+
+// //delete tag
+router.delete('/posts/:id', postController.delete)
 
 module.exports = router

@@ -16,11 +16,12 @@ const schema = new Schema({
     ref: "Tag",
     required: true 
   },
-  tags: { 
+  authors: { 
     type: mongoose.Types.ObjectId,
     ref: "Author",
     required: true 
   },
+  thumbnail: { type: String }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Post', schema)
